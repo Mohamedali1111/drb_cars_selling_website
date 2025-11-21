@@ -11,9 +11,9 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900">
       <Navbar />
       <Hero />
-      <main className="mx-auto flex max-w-6xl flex-col gap-8 px-4 pb-12 pt-12 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-16">
-        <LatestCars />
+      <main className="flex flex-col">
         <AboutSection />
+        <LatestCars />
         <ServicesSection />
         <CallToAction />
       </main>
