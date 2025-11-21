@@ -8,10 +8,10 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-black dark:text-white">
+    <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900">
       <Navbar />
-      <main className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-16 pt-32">
-        <Hero />
+      <Hero />
+      <main className="mx-auto flex max-w-6xl flex-col gap-8 px-4 pb-12 pt-12 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-16">
         <LatestCars />
         <AboutSection />
         <ServicesSection />
