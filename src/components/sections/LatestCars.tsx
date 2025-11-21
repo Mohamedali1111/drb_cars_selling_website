@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { ScrollAnimation } from "@/components/utils/ScrollAnimation";
 
 const cars = [
   {
@@ -53,23 +54,24 @@ export function LatestCars() {
   return (
     <section
       id="cars"
-      className="w-full bg-zinc-100 py-16 sm:py-20"
+      className="w-full bg-gradient-to-b from-zinc-50/30 to-white py-16 sm:py-20 shadow-sm"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-start">
-          <div className="max-w-xl">
-            <h2 className="text-2xl font-bold text-zinc-900 sm:text-3xl md:text-4xl">
-              OUR LATEST CARS
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
-              Lorem ipsum dolor sit amet, consectetur adipis cing elit. Ornare
-              vestibulum diam sit adipis cing elit adipis cing elit.
-            </p>
-          </div>
+        <ScrollAnimation delay={0}>
+          <div className="mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-start">
+            <div className="max-w-xl">
+              <h2 className="text-2xl font-bold text-zinc-900 sm:text-3xl md:text-4xl">
+                OUR LATEST CARS
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
+                Lorem ipsum dolor sit amet, consectetur adipis cing elit. Ornare
+                vestibulum diam sit adipis cing elit adipis cing elit.
+              </p>
+            </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex gap-2">
+            {/* Navigation Buttons */}
+            <div className="flex gap-2">
             <button
               onClick={prevCar}
               disabled={currentIndex === 0}
@@ -110,16 +112,15 @@ export function LatestCars() {
                 />
               </svg>
             </button>
+            </div>
           </div>
-        </div>
+        </ScrollAnimation>
 
         {/* Car Cards Grid */}
         <div className="grid gap-6 md:grid-cols-3">
           {visibleCars.map((car, index) => (
-            <article
-              key={currentIndex + index}
-              className="group relative h-[400px] overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl sm:h-[450px]"
-            >
+            <ScrollAnimation key={currentIndex + index} delay={index * 100}>
+              <article className="group relative h-[400px] overflow-hidden rounded-xl shadow-lg transition-all duration-500 hover:shadow-xl sm:h-[450px]">
               {/* Car Image */}
               <div className="absolute inset-0">
                 <Image
@@ -153,7 +154,8 @@ export function LatestCars() {
                   <div className="h-px flex-1 bg-white/40" />
                 </div>
               </div>
-            </article>
+              </article>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

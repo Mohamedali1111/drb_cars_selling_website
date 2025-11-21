@@ -2,29 +2,33 @@
 "use client";
 
 import Image from "next/image";
+import { ScrollAnimation } from "@/components/utils/ScrollAnimation";
 
 export function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full bg-orange-50/30 py-16 sm:py-20"
+      className="w-full bg-gradient-to-b from-white to-zinc-50/50 py-16 sm:py-20 shadow-sm"
     >
       <div className="relative grid md:grid-cols-2 md:items-center md:gap-12">
         {/* Left Column - Image (extends to edge) */}
-        <div className="relative h-[380px] overflow-hidden md:h-[480px] lg:h-[520px]">
-          <Image
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80"
-            alt="Premium car on scenic road"
-            fill
-            className="object-cover transition-transform duration-700 hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-        </div>
+        <ScrollAnimation delay={0}>
+          <div className="relative h-[380px] overflow-hidden md:h-[480px] lg:h-[520px]">
+            <Image
+              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80"
+              alt="Premium car on scenic road"
+              fill
+              className="object-cover transition-transform duration-700 hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+          </div>
+        </ScrollAnimation>
 
         {/* Right Column - Text Content */}
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-5 py-8 md:py-0">
+          <ScrollAnimation delay={100}>
+            <div className="flex flex-col gap-5 py-8 md:py-0">
             {/* Heading */}
             <h2 className="text-2xl font-bold uppercase leading-tight text-orange-500 sm:text-3xl md:text-4xl">
               ABOUT US
@@ -52,7 +56,8 @@ export function AboutSection() {
               <span className="relative z-10">Read More</span>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </button>
-          </div>
+            </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>

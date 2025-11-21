@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import { ScrollAnimation } from "@/components/utils/ScrollAnimation";
 
 const showcases = [
   {
@@ -22,14 +23,12 @@ const showcases = [
 
 export function CallToAction() {
   return (
-    <section className="w-full bg-zinc-100 py-16 sm:py-20">
+    <section className="w-full bg-gradient-to-b from-white to-orange-50/20 py-16 sm:py-20 shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-6 md:grid-cols-2 md:gap-8">
           {showcases.map((item, index) => (
-            <article
-              key={index}
-              className="group overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl"
-            >
+            <ScrollAnimation key={index} delay={index * 150}>
+              <article className="group overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-500 hover:shadow-xl">
               {/* Car Image */}
               <div className="relative h-[280px] overflow-hidden sm:h-[320px]">
                 <Image
@@ -53,7 +52,8 @@ export function CallToAction() {
                   Learn More
                 </button>
               </div>
-            </article>
+              </article>
+            </ScrollAnimation>
           ))}
         </div>
       </div>
