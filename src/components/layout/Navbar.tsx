@@ -1,9 +1,22 @@
-// Navbar component renders the fixed top navigation with placeholder links and a theme toggle stub.
-const navLinks = ["Home", "Cars", "About", "Services", "Contact"];
+"use client";
+
+// Navbar provides the fixed global navigation, theme toggle, and CTA button.
+import { useTheme } from "next-themes";
+
+const navLinks = ["Home", "Cars", "About", "Services"];
 
 export function Navbar() {
+  const { resolvedTheme, setTheme } = useTheme();
+
+  const handleToggle = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
+
+  const toggleLabel =
+    resolvedTheme === "dark" ? "Light mode" : "Dark mode";
+
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 bg-white/80 px-6 py-4 backdrop-blur-md dark:bg-zinc-900/80">
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/80 px-6 py-4 backdrop-blur-md dark:border-white/5 dark:bg-zinc-900/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between">
         <a
           href="#top"
@@ -23,11 +36,18 @@ export function Navbar() {
           ))}
           <button
             type="button"
-            className="rounded-full border border-zinc-300 px-4 py-2 text-xs uppercase tracking-wide text-zinc-700 transition hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-200 dark:hover:border-white dark:hover:text-white"
+            onClick={handleToggle}
             aria-label="Toggle dark mode"
+            className="rounded-full border border-zinc-300 px-4 py-2 text-xs uppercase tracking-wide text-zinc-700 transition hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-200 dark:hover:border-white dark:hover:text-white"
           >
-            Toggle
+            {toggleLabel}
           </button>
+          <a
+            href="#cars"
+            className="rounded-full bg-orange-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow transition hover:bg-orange-600"
+          >
+            Order now
+          </a>
         </div>
         <button
           type="button"
