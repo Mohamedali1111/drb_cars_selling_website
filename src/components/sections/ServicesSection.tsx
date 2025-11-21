@@ -1,53 +1,40 @@
-// ServicesSection outlines core dealership services using simple cards.
-const services = [
-  {
-    title: "Concierge Delivery",
-    description: "Doorstep delivery worldwide with personalized handover.",
-  },
-  {
-    title: "Adaptive Financing",
-    description: "Flexible plans and subscription ownership models.",
-  },
-  {
-    title: "Aftercare Studio",
-    description: "Certified detailing, software updates, and performance tuning.",
-  },
-  {
-    title: "Fleet Advisory",
-    description: "Dedicated team for corporate and hospitality partners.",
-  },
-];
+// ProfessionalServicesBanner displays a compact premium banner with car background and service messaging.
+"use client";
 
-export function ServicesSection() {
+import Image from "next/image";
+
+export function ProfessionalServicesBanner() {
   return (
     <section
       id="services"
-      className="rounded-3xl bg-gradient-to-br from-zinc-900 to-zinc-800 px-6 py-16 text-white"
+      className="relative h-[400px] w-full overflow-hidden sm:h-[450px] md:h-[500px]"
     >
-      <div className="mx-auto max-w-4xl text-center">
-        <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">
-          Services
-        </p>
-        <h2 className="mt-4 text-3xl font-semibold">Beyond the purchase</h2>
-        <p className="mt-3 text-base text-zinc-300">
-          Signature services designed to elevate every stage of ownership.
-        </p>
+      {/* Background Image - Car in motion */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1920&q=80"
+          alt="Premium car services"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
       </div>
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
-        {services.map((service) => (
-          <article
-            key={service.title}
-            className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-sm">
-              ★
-            </div>
-            <h3 className="mt-4 text-xl font-semibold">{service.title}</h3>
-            <p className="mt-2 text-sm text-zinc-300">{service.description}</p>
-          </article>
-        ))}
+
+      {/* Dark Overlay - Stronger on left for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/45" />
+
+      {/* Content Overlay - Text positioned prominently on left side */}
+      <div className="relative z-10 flex h-full items-center">
+        <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-bold uppercase leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+              <span className="block">WE PROVIDE PROFESSIONAL</span>
+              <span className="block text-orange-500">CAR SERVICES</span>
+            </h2>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
-

@@ -4,7 +4,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { CallToAction } from "@/components/sections/CallToAction";
 import { Hero } from "@/components/sections/Hero";
 import { LatestCars } from "@/components/sections/LatestCars";
-import { ServicesSection } from "@/components/sections/ServicesSection";
+import { ProfessionalServicesBanner } from "@/components/sections/ServicesSection";
 
 export default function Home() {
   return (
@@ -13,8 +13,8 @@ export default function Home() {
       <Hero />
       <main className="flex flex-col">
         <AboutSection />
+        <ProfessionalServicesBanner />
         <LatestCars />
-        <ServicesSection />
         <CallToAction />
       </main>
       <Footer />
