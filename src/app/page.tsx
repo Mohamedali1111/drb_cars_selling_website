@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { CallToAction } from "@/components/sections/CallToAction";
+import { ContentGallerySection } from "@/components/sections/ContentGallerySection";
 import { FeaturedSection } from "@/components/sections/FeaturedSection";
 import { Hero } from "@/components/sections/Hero";
 import { LatestCars } from "@/components/sections/LatestCars";
@@ -18,6 +19,7 @@ export default function Home() {
         <LatestCars />
         <CallToAction />
         <FeaturedSection />
+        <ContentGallerySection />
       </main>
       <Footer />
     </div>
