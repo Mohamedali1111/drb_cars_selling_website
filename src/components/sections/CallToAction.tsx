@@ -22,13 +22,13 @@ const showcases = [
 
 export function CallToAction() {
   return (
-    <section className="w-full bg-zinc-100 py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <div className="grid gap-8 md:grid-cols-2 md:gap-10">
+    <section className="w-full bg-zinc-100 py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-6 md:grid-cols-2 md:gap-8">
           {showcases.map((item, index) => (
             <article
               key={index}
-              className="group overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:shadow-xl"
+              className="group overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl"
             >
               {/* Car Image */}
               <div className="relative h-[280px] overflow-hidden sm:h-[320px]">
@@ -42,14 +42,14 @@ export function CallToAction() {
               </div>
 
               {/* Content */}
-              <div className="px-6 py-6 sm:px-8 sm:py-8">
-                <h3 className="text-xl font-bold text-zinc-900 sm:text-2xl">
+              <div className="px-5 py-5 sm:px-6 sm:py-6">
+                <h3 className="text-lg font-bold text-zinc-900 sm:text-xl">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-base leading-relaxed text-zinc-600 sm:text-lg">
+                <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
                   {item.description}
                 </p>
-                <button className="mt-6 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40">
+                <button className="mt-5 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-lg shadow-orange-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40 cursor-pointer">
                   Learn More
                 </button>
               </div>

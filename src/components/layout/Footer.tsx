@@ -87,15 +87,15 @@ export function Footer() {
   return (
     <footer className="bg-black text-white">
       {/* Top Section */}
-      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <div className="grid gap-8 md:grid-cols-12 md:gap-6">
           {/* Logo Section */}
           <div className="md:col-span-3">
             <a
               href="#home"
-              className="flex items-center gap-2.5 transition-opacity hover:opacity-80"
+              className="flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-80 cursor-pointer"
             >
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 text-base font-bold text-white shadow-lg shadow-orange-500/30">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 text-base font-bold text-white shadow-lg shadow-orange-500/30 transition-transform duration-300 hover:scale-105">
                 C°
               </div>
               <span className="text-lg font-bold tracking-tight text-white">
@@ -117,7 +117,7 @@ export function Footer() {
                       <li key={link}>
                         <a
                           href="#"
-                          className="text-sm text-white/80 transition-colors hover:text-white"
+                          className="text-sm text-white/80 transition-colors duration-300 hover:text-white cursor-pointer"
                         >
                           {link}
                         </a>
@@ -132,10 +132,10 @@ export function Footer() {
           {/* Action Buttons */}
           <div className="md:col-span-3">
             <div className="flex flex-col gap-3">
-              <button className="rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105">
+              <button className="rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 cursor-pointer">
                 Register
               </button>
-              <button className="rounded-lg border border-white/20 bg-white px-6 py-3 text-sm font-semibold text-orange-500 transition-all hover:bg-white/10 hover:scale-105">
+              <button className="rounded-lg border border-white/20 bg-white px-6 py-3 text-sm font-semibold text-orange-500 transition-all duration-300 hover:bg-white/10 hover:scale-105 cursor-pointer">
                 Log in
               </button>
             </div>
@@ -144,12 +144,12 @@ export function Footer() {
       </div>
 
       {/* Orange Separator Line */}
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-px bg-orange-500" />
       </div>
 
       {/* Bottom Section */}
-      <div className="mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           {/* Copyright */}
           <p className="text-sm text-zinc-400">
@@ -164,7 +164,7 @@ export function Footer() {
                 <a
                   key={social.name}
                   href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-white transition-all hover:bg-orange-600 hover:scale-110"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-white transition-all duration-300 hover:bg-orange-600 hover:scale-110 cursor-pointer"
                   aria-label={social.name}
                 >
                   {social.icon}

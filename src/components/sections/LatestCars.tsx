@@ -1,4 +1,4 @@
-// LatestCars section showcases featured vehicles with carousel navigation.
+// LatestCars section showcases featured vehicles with premium carousel navigation.
 "use client";
 
 import Image from "next/image";
@@ -55,7 +55,7 @@ export function LatestCars() {
       id="cars"
       className="w-full bg-zinc-100 py-16 sm:py-20"
     >
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-start">
           <div className="max-w-xl">
@@ -73,7 +73,7 @@ export function LatestCars() {
             <button
               onClick={prevCar}
               disabled={currentIndex === 0}
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-200 text-zinc-600 transition-all hover:bg-zinc-300 hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-200 text-zinc-600 transition-all duration-300 hover:bg-zinc-300 hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
               aria-label="Previous car"
             >
               <svg
@@ -93,7 +93,7 @@ export function LatestCars() {
             <button
               onClick={nextCar}
               disabled={currentIndex >= cars.length - 3}
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500 text-white transition-all hover:bg-orange-600 hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500 text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
               aria-label="Next car"
             >
               <svg
@@ -118,7 +118,7 @@ export function LatestCars() {
           {visibleCars.map((car, index) => (
             <article
               key={currentIndex + index}
-              className="group relative h-[420px] overflow-hidden rounded-xl shadow-md transition-all hover:shadow-lg sm:h-[480px]"
+              className="group relative h-[400px] overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl sm:h-[450px]"
             >
               {/* Car Image */}
               <div className="absolute inset-0">
@@ -135,17 +135,17 @@ export function LatestCars() {
               <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/80" />
 
               {/* Text Content Overlay - Top Section */}
-              <div className="absolute top-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-lg font-bold text-white sm:text-xl">
+              <div className="absolute top-0 left-0 right-0 p-5 text-white sm:p-6">
+                <h3 className="text-base font-bold text-white sm:text-lg">
                   {car.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/90 sm:text-base">
+                <p className="mt-2 text-xs leading-relaxed text-white/90 sm:text-sm">
                   {car.description}
                 </p>
               </div>
 
               {/* Bottom Section with HOT SELLS badge */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                 <div className="flex items-center gap-3">
                   <span className="rounded-md bg-orange-500 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
                     HOT SELLS

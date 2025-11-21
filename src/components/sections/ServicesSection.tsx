@@ -1,4 +1,4 @@
-// ProfessionalServicesBanner displays a compact premium banner with car background and service messaging.
+// ProfessionalServicesBanner displays a premium banner with car background and service messaging.
 "use client";
 
 import Image from "next/image";
@@ -16,20 +16,20 @@ export function ProfessionalServicesBanner() {
           alt="Premium car services"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center transition-transform duration-700"
           sizes="100vw"
         />
       </div>
 
       {/* Dark Overlay - Stronger on left for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/45" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
 
-      {/* Content Overlay - Text positioned prominently on left side */}
-      <div className="relative z-10 flex h-full items-center">
-        <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold uppercase leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-              <span className="block">WE PROVIDE PROFESSIONAL</span>
+      {/* Content Overlay - Text positioned at bottom-left */}
+      <div className="relative z-10 flex h-full items-end">
+        <div className="mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-12 lg:px-8 lg:pb-16">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold uppercase leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+              <span className="block whitespace-nowrap">WE PROVIDE PROFESSIONAL CAR</span>
               <span className="block text-orange-500">CAR SERVICES</span>
             </h2>
           </div>
